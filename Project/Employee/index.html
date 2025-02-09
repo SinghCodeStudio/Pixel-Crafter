@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To OfficeBiotics</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div id="popup-modal" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Welcome Admin!!</h2>
+            <p>18 Tasks are remaining today.</p>
+        </div>
+    </div>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./IMAGE/offb.png">
+                    <h2>Office<span class="primary">Biotics</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="#">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Tasks</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">assignment</span>
+                    <h3>Assign Task</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Employees</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>New Tasks</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Log Out</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <h1>Dashboard</h1>
+            <div class="date">
+                <input type="date">
+            </div>
+
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Work Completed</h3>
+                            <h1>7/10</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+
+                <div class="expenses">
+                    <span class="material-icons-sharp">bar_chart</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Total Work Remaining</h3>
+                            <h1>3/10</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>62%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+
+                <div class="income">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="lef">
+                            <h3>Work In Progress</h3>
+                            <h1>2</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>44%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+            </div>
+            <!-- Employee Section -->
+            <div class="employee-section">
+                <h2>Employee Tasks</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Remaining Tasks</th>
+                            <th>Completed Tasks</th>
+                            <th>In Progress</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick="showEmployeeTasks('John Doe')">
+                            <td>John Doe</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>Feb 15, 2025</td>
+                        </tr>
+                        <tr onclick="showEmployeeTasks('Sarah Smith')">
+                            <td>Sarah Smith</td>
+                            <td>2</td>
+                            <td>7</td>
+                            <td>1</td>
+                            <td>Feb 18, 2025</td>
+                        </tr>
+                        <tr onclick="showEmployeeTasks('Michael Brown')">
+                            <td>Michael Brown</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>3</td>
+                            <td>Feb 20, 2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
+            </div>
+
+        </main>
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey,<b>Rohan</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./IMAGE/profile 2.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-updates">
+                <h2>Recent Updates</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="IMAGE/profile 1.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Reynolds </b>started working on a new task.</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="IMAGE/profile 3.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Gareth Bale </b>completed today's all tasks.</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="IMAGE/profile 4.jpg">
+                        </div>
+                        <div class="message">
+                            <p><b>Emily Watt</b>'s all tasks are remaining.</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sales-analytics">
+                <h2>Employee Task Status</h2>
+                <div class="item online">
+                    <div class="icon">
+                        <span class="material-icons-sharp">check</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>Gareth Bale</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="success">Completed</h5>
+                        <h3>12/12</h3>
+
+                    </div>
+                </div>
+                <div class="item offline">
+                    <div class="icon">
+                        <span class="material-icons-sharp">close</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>Jane Smith</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="danger">Remaining</h5>
+                        <h3>3/9</h3>
+
+                    </div>
+                </div>
+                <div class="item customers">
+                    <div class="icon">
+                        <span class="material-icons-sharp">autorenew</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>Mike Johnson</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="success">In Progress</h5>
+                        <h3>4/5</h3>
+                    </div>
+                </div>
+                <div class="item add-product">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Add a Task</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Employee Task Pop-up -->
+    <div id="employee-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeEmployeePopup()">&times;</span>
+            <h2 id="employee-name">Employee Name</h2>
+            <p><b>Remaining Tasks:</b></p>
+            <ul id="remaining-tasks"></ul>
+            <p><b>Due Date:</b> <span id="due-date"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Employee task data
+        const employeeTasks = {
+            "John Doe": { tasks: ["Finish report", "Update dashboard", "Send email to HR"], due: "Feb 15, 2025" },
+            "Sarah Smith": { tasks: ["Design UI mockups", "Prepare meeting notes"], due: "Feb 18, 2025" },
+            "Michael Brown": { tasks: ["Fix website bugs", "Optimize database", "Write API docs", "Schedule interviews"], due: "Feb 20, 2025" }
+        };
+
+        // Function to show employee tasks
+        function showEmployeeTasks(name) {
+            document.getElementById("employee-name").textContent = name;
+            const taskList = document.getElementById("remaining-tasks");
+            taskList.innerHTML = ""; // Clear previous list
+            employeeTasks[name].tasks.forEach(task => {
+                let li = document.createElement("li");
+                li.textContent = task;
+                taskList.appendChild(li);
+            });
+            document.getElementById("due-date").textContent = employeeTasks[name].due;
+            document.getElementById("employee-popup").style.display = "flex";
+        }
+
+        // Function to close pop-up
+        function closeEmployeePopup() {
+            document.getElementById("employee-popup").style.display = "none";
+        }
+    </script>
+
+    <style>
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Centers the pop-up */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .employee-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .employee-section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .employee-section:hover {
+            box-shadow: none;
+        }
+
+        .employee-section th,
+        .employee-section td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .employee-section tr {
+            cursor: pointer;
+        }
+
+        .employee-section tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Pop-up Styles */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .popup-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .popup-content ul li {
+            background: #f8f8f8;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Show modal on page load
+        window.onload = function () {
+            document.getElementById("popup-modal").style.display = "block";
+        };
+
+        // Close modal function
+        function closePopup() {
+            document.getElementById("popup-modal").style.display = "none";
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
